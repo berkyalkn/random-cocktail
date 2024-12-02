@@ -1,0 +1,142 @@
+
+:root {
+    --card-height: 65vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+  
+  body {
+    min-height: 100vh;
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  }
+
+  
+  h1 , h2 {
+    color: white;
+    font-family: "Titan One", cursive;
+    margin-bottom: 20px;
+  }
+  .card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    font-family: "Gloria Hallelujah", cursive;
+  }
+
+  .info1 {
+    width: 350px;
+    height: 350px;
+  }
+
+  .info1 h1 {
+    font-size: 30px;
+  }
+
+  .info2 {
+    width: 350px;
+    height: 520px;
+  }
+
+  .container {
+    display: flex; 
+    gap: 50px; 
+    align-items: flex-start; 
+    justify-content: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+
+  
+  .card:hover {
+    color: rgb(181, 217, 36);
+    transition: color 1s;
+  }
+  .card:hover:before,
+  .card:hover:after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      #cfc843,
+      #e6a313 43%,
+      #1ed1cb
+    );
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+  }
+  
+
+  @property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+  
+  a {
+    color: #212534;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  
+  .custom-btn {
+    margin-top: 20px;
+    background-color: #79bb4a; 
+    color: rgb(232, 229, 229); 
+    padding: 12px 24px;
+    font-size: 20px; 
+    font-weight: bold; 
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; 
+  }
+  
+
+  .custom-btn:hover {
+    background-color: #45a049; 
+    transform: translateY(-3px);
+  }
+  
+  .custom-btn:active {
+    background-color: #388e3c; 
+    transform: translateY(0);
+  }
+  
