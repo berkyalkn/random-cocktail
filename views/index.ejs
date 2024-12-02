@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cocktail</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <style>
+      .card {
+        background-image: url("<%= strDrinkThumb %>");
+      }
+    </style>
+
+</head>
+
+<body>
+    <h1>Discover your next favorite cocktail recipe!</h1>
+    <h2>Click button to discover your new cocktail</h2>
+    <div class = "container">
+
+      <div class="info1">
+        <h1>   INFORMATIONS:</h1>
+        <p>Name : <%= name %> </p>
+        <p>Drink ID : <%= id %> </p>
+        <p>Category : <%= category %> </p>
+        <p>Alcholic : <%= alcholic %> </p>
+        <p>Glass : <%= glass %> </p>
+          
+      </div>
+      <div class="card">
+      <p>
+        <%= name %>
+      </p>
+    </div>
+    <div class = "info2">
+      <h1>INSTRUCTIONS: </h1>
+      <p>
+        <%= instructions %>
+      </p>
+
+      <h1>INGREDIENTS:</h1>
+      <ul>
+        <li><%= i1 %> </li>
+        <li><%= i2 %> </li>
+        <li><%= i3 %> </li>
+        <li><%= i4 %> </li>
+        <li><%= i5 %> </li>
+        <li><%= i6 %> </li>
+      </ul>
+    </div>
+    </div>
+    <button class="custom-btn">
+      RANDOM COCKTAIL
+    </button>  
+    
+  </body>
+</html>
