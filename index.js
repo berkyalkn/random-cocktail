@@ -33,7 +33,7 @@ app.get("/", async (req, res) => {
             measure3 : cocktail.strMeasure3,
             measure4 : cocktail.strMeasure4,
             measure5 : cocktail.strMeasure5,
-            measure6 : cocktail.strMeasure6,
+            measure6 : cocktail.strMeasure6 ,
          });  
     } catch (error) {
         console.error(error);
