@@ -20,6 +20,7 @@
     color: white;
     font-family: "Titan One", cursive;
     margin-bottom: 20px;
+    
   }
   .card {
     background-size: cover;
@@ -46,11 +47,33 @@
 
   .info1 h1 {
     font-size: 30px;
+    color: #c3da6f;
+  }
+
+  .info1 p {
+    font-size: 24px;
+    margin-top: 35px;
+    color: #cec674;
   }
 
   .info2 {
     width: 350px;
     height: 520px;
+  }
+
+  .info2 h1 {
+    font-size: 30px;
+    color: #c3da6f;
+  }
+
+  .info2 p , ul {
+    font-size: 24px;
+    margin-top: 30px;
+    color: #cec674;
+  }
+
+  li {
+    padding-bottom: 10px;
   }
 
   .container {
