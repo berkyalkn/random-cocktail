@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <h1>Discover your next favorite cocktail recipe!</h1>
-    <h2>Click button to discover your new cocktail</h2>
+    <h1 style="font-size: 45px; color: rgb(99, 243, 243)">Discover your  favorite cocktail recipe!</h1>
+    <h2 style="color: rgb(99, 243, 243)">NOTE : Click button to discover your next cocktail</h2>
     <div class = "container">
 
       <div class="info1">
@@ -38,14 +38,26 @@
         <%= instructions %>
       </p>
 
-      <h1>INGREDIENTS:</h1>
+      <h1 style="padding-top: 20px;">INGREDIENTS:</h1>
       <ul>
-        <li><%= i1 %> </li>
-        <li><%= i2 %> </li>
-        <li><%= i3 %> </li>
-        <li><%= i4 %> </li>
-        <li><%= i5 %> </li>
-        <li><%= i6 %> </li>
+        <% if (i1) { %>
+          <li><%= i1 %><%= measure1 ? " : " + measure1 : "" %></li>
+        <% } %>
+        <% if (i2) { %>
+          <li><%= i2 %><%= measure2 ? " : " + measure2 : "" %></li>
+        <% } %>
+        <% if (i3) { %>
+          <li><%= i3 %><%= measure3 ? " : " + measure3 : "" %></li>
+        <% } %>
+        <% if (i4) { %>
+          <li><%= i4 %><%= measure4 ? " : " + measure4 : "" %></li>
+        <% } %>
+        <% if (i5) { %>
+          <li><%= i5 %><%= measure5 ? " : " + measure5 : "" %></li>
+        <% } %>
+        <% if (i6) { %>
+          <li><%= i6 %><%= measure6 ? " : " + measure6 : "" %></li>
+        <% } %>
       </ul>
     </div>
     </div>
