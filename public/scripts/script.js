@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const button = document.querySelector(".custom-btn");
 const container = document.querySelector(".container");
 
@@ -8,8 +10,8 @@ button.addEventListener("click", async () => {
 
 
     try {
-        const response = await fetch("/random-cocktail");
-        const data = await response.json();
+        const response = await axios.get("/random-cocktail");
+        const data =  response.data;
 
         const info1 = `
             <div class="info1">
