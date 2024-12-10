@@ -45,7 +45,7 @@ To run the project locally :
    ```
    node --watch index.js
 
-2. Open your browser and visit http://localhost:3000 to see the app in action.
+2. Open your browser and visit http://localhost:4000 to see the app in action.
 
 
 
