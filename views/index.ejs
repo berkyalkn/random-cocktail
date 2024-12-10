@@ -40,24 +40,11 @@
 
       <h1 style="padding-top: 20px;">INGREDIENTS:</h1>
       <ul>
-        <% if (i1) { %>
-          <li><%= i1 %><%= measure1 ? " : " + measure1 : "" %></li>
-        <% } %>
-        <% if (i2) { %>
-          <li><%= i2 %><%= measure2 ? " : " + measure2 : "" %></li>
-        <% } %>
-        <% if (i3) { %>
-          <li><%= i3 %><%= measure3 ? " : " + measure3 : "" %></li>
-        <% } %>
-        <% if (i4) { %>
-          <li><%= i4 %><%= measure4 ? " : " + measure4 : "" %></li>
-        <% } %>
-        <% if (i5) { %>
-          <li><%= i5 %><%= measure5 ? " : " + measure5 : "" %></li>
-        <% } %>
-        <% if (i6) { %>
-          <li><%= i6 %><%= measure6 ? " : " + measure6 : "" %></li>
-        <% } %>
+        <ul>
+          <% ingredients.forEach(ingredient => { %>
+            <li><%= ingredient.name %> <%= ingredient.measure ? ": " + ingredient.measure : "" %></li>
+          <% }); %>
+        </ul>
       </ul>
     </div>
     </div>
@@ -65,5 +52,6 @@
       RANDOM COCKTAIL
     </button>  
     
+    <script src="/scripts/script.js"></script>
   </body>
 </html>
