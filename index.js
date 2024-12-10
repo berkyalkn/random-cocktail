@@ -21,23 +21,52 @@ app.get("/", async (req, res) => {
             alcholic : cocktail.strAlcoholic,
             glass : cocktail.strGlass,
             instructions : cocktail.strInstructions,
-            i1 : cocktail.strIngredient1,
-            i2 : cocktail.strIngredient2,
-            i3 : cocktail.strIngredient3,
-            i4 : cocktail.strIngredient4,
-            i5 : cocktail.strIngredient5,
-            i6: cocktail.strIngredient6,
+            ingredients: [
+                { name: cocktail.strIngredient1, measure: cocktail.strMeasure1 },
+                { name: cocktail.strIngredient2, measure: cocktail.strMeasure2 },
+                { name: cocktail.strIngredient3, measure: cocktail.strMeasure3 },
+                { name: cocktail.strIngredient4, measure: cocktail.strMeasure4 },
+                { name: cocktail.strIngredient5, measure: cocktail.strMeasure5 },
+                { name: cocktail.strIngredient6, measure: cocktail.strMeasure6 },
+                { name : cocktail.strIngredient7, measure: cocktail.strMeasure7}, 
+                { name : cocktail.strIngredient8, measure: cocktail.strMeasure8}, 
+
+            ].filter(ing => ing.name),
             strDrinkThumb: cocktail.strDrinkThumb,
-            measure1 : cocktail.strMeasure1,
-            measure2 : cocktail.strMeasure2,
-            measure3 : cocktail.strMeasure3,
-            measure4 : cocktail.strMeasure4,
-            measure5 : cocktail.strMeasure5,
-            measure6 : cocktail.strMeasure6 ,
          });  
     } catch (error) {
         console.error(error);
         res.status(500).send("Something went wrong while rendering the page.");
+    }
+});
+
+app.get("/random-cocktail", async(req, res) => {
+    try {
+        const result = await axios.get(API_URL);
+        const cocktail = result.data.drinks[0];
+
+        res.json({
+            name: cocktail.strDrink,
+            id: cocktail.idDrink,
+            category: cocktail.strCategory,
+            alcoholic: cocktail.strAlcoholic,
+            glass: cocktail.strGlass,
+            instructions: cocktail.strInstructions,
+            ingredients: [
+                { name: cocktail.strIngredient1, measure: cocktail.strMeasure1 },
+                { name: cocktail.strIngredient2, measure: cocktail.strMeasure2 },
+                { name: cocktail.strIngredient3, measure: cocktail.strMeasure3 },
+                { name: cocktail.strIngredient4, measure: cocktail.strMeasure4 },
+                { name: cocktail.strIngredient5, measure: cocktail.strMeasure5 },
+                { name: cocktail.strIngredient6, measure: cocktail.strMeasure6 },
+                { name : cocktail.strIngredient7, measure: cocktail.strMeasure7}, 
+                { name : cocktail.strIngredient8, measure: cocktail.strMeasure8}, 
+            ].filter(ing => ing.name),
+            strDrinkThumb: cocktail.strDrinkThumb,
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Something went wrong." });
     }
 });
 
